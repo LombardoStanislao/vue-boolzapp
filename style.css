@@ -5,6 +5,8 @@
   font-family: sans-serif;
 }
 
+/* Classi generiche */
+
 ul {
   list-style: none;
 }
@@ -18,6 +20,7 @@ a {
   float: left;
 }
 
+/***********  Preparazione Layout ********** */
 
 .background-top {
   background-color: #12916b;
@@ -60,6 +63,8 @@ a {
   background-color: lightblue;
 }
 
+/********** Inizio lato lista contatti ***********/
+
 .user-info {
   width: 100%;
   height: 65px;
@@ -67,6 +72,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-right: 1px solid #dddcd9;
 }
 
 .notification {
@@ -157,7 +163,7 @@ a {
 .friend {
   display: flex;
   align-items: center;
-  padding-top: 10px;
+  padding-top: 15px;
 }
 
 .friend-info {
@@ -170,4 +176,17 @@ a {
 
 .friend-info small {
   color: rgba(0, 0, 0, 0.4);
+}
+
+
+/***********  Inizio lista chatbox ***********/
+
+.contacted-user {
+  
+  height: 65px;
+  background-color: #eae8e3;
+}
+
+
+.chat {
 }
