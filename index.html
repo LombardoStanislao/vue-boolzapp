@@ -6,7 +6,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="https://kit.fontawesome.com/7b09a46f67.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-    <title></title>
+    <title>Boolzapp</title>
   </head>
   <body>
 
@@ -127,19 +127,42 @@
 
             <div class="contacted-user" >
 
-              <div class="friend-contacted-avatar">
+              <div class="contacted">
 
-                <img class="avatar-image" :src="contacts[indexContacts].avatar" alt="">
+                <div class="friend-contacted-avatar">
+
+                  <img class="avatar-image" :src="contacts[indexContacts].avatar" alt="">
+
+                </div>
+
+                <div class="friend-contacted-info">
+
+                  <p>{{contacts[indexContacts].name}}</p>
+
+                  <small class="opacity-down">Ultimo accesso oggi alle 15:40</small>
+
+                </div>
 
               </div>
 
-              <div class="friend-contacted-info">
+              <div class="chat-settings">
 
-                <p>{{contacts[indexContacts].name}}</p>
+                <a href="#">
+                  <i class="fas fa-search"></i>
+                </a>
 
-                <small class="opacity-down">Ultimo accesso oggi alle 15:40</small>
+                <a href="#">
+                  <i class="fas fa-paperclip"></i>
+                </a>
+
+                <a href="#">
+                  <i class="fas fa-ellipsis-v"></i>
+                </a>
+
+
 
               </div>
+
 
 
 
@@ -149,12 +172,33 @@
 
             </div>
 
-            <!-- <div class="chat">
+            <div class="chat">
 
               <p v-for="(message, index) in contacts[indexContacts].messages">
                 {{message.message}}
               </p>
-            </div> -->
+
+            </div>
+
+            <div class="send-message">
+
+              <div class="emoji">
+                <a href="#">
+                  <i id="emoji" class="far fa-smile"></i>
+                </a>
+              </div>
+
+              <div class="write-message">
+                <input id="text-input" type="text" name="" value="" placeholder="Scrivi un messaggio">
+              </div>
+
+              <div class="vocal-message">
+                <a href="#">
+                  <i id="icon-vocal-text" class="fas fa-microphone"></i>
+                </a>
+              </div>
+
+            </div>
 
         </div>
 

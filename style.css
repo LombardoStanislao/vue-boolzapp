@@ -45,10 +45,10 @@ p, small {
   position: absolute;
   width: 1200px;
   height: 650px;
-  background-color: white;
   right: 50%;
   top: 50%;
   transform: translate(+50%, -50%);
+
 
 }
 
@@ -64,12 +64,12 @@ p, small {
   background-color: coral;
   display: flex;
   flex-direction: column;
+
 }
 
 .chatbox {
   width: 750px;
   height: 100%;
-  background-color: lightblue;
 }
 
 /********** Inizio lato lista contatti ***********/
@@ -112,7 +112,7 @@ p, small {
   margin-left: 5px;
 }
 
-.user-settings a i {
+.user-settings a i, .chat-settings a i {
   color: #b5b3af;
   font-size: 20px;
   padding-right: 10px;
@@ -187,12 +187,18 @@ p, small {
 
 /***********  Inizio lista chatbox ***********/
 
+.contacted {
+  display: flex;
+  align-items: center;
+}
+
 .contacted-user {
 
   height: 65px;
   background-color: #eae8e3;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .friend-contacted-avatar {
@@ -201,4 +207,43 @@ p, small {
 
 .friend-contacted-info {
   padding-left: 10px;
+}
+
+.chat {
+  height: calc(100% - 65px - 65px);
+  background-image: url('img/background-whatsapp.png');
+}
+
+.send-message {
+  height: 65px;
+  background-color: #eae8e3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#emoji {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.write-message {
+  flex-grow: 1;
+}
+
+#text-input {
+  width: 100%;
+  border: none;
+  padding: 10px 5px;
+  border-radius: 5px;
+}
+
+#icon-vocal-text {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+
 }
