@@ -202,7 +202,7 @@
 
               <div class="write-message">
                 <!-- <input id="text-input" type="text" name="" placeholder="Scrivi un messaggio"> -->
-                <input v-on:keyup.enter="sendingMessage(newMessage)" id="text-input" type="text" name="" v-model="newMessage" placeholder="Scrivi un messaggio">
+                <input v-on:keyup.enter="sendingMessage(newMessage, indexContacts)" id="text-input" type="text" name="" v-model="newMessage" placeholder="Scrivi un messaggio">
               </div>
 
               <div class="vocal-message">

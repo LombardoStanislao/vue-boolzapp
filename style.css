@@ -104,6 +104,7 @@ p, small {
   height: calc(650px - 50px - 75px - 65px);
   background-color: white;
   padding: 20px;
+  overflow: scroll;
 }
 
 #user-icon {
@@ -218,6 +219,7 @@ p, small {
 
 .chat {
   height: calc(100% - 65px - 65px);
+  overflow: scroll;
   background-image: url('img/background-whatsapp.png');
 }
 
@@ -270,12 +272,14 @@ p, small {
   background-color: #bcf7b2;
   float: right;
   margin-right: 20px;
+  max-width: 70%;
 }
 
 .received {
   background-color: white;
   float: left;
   margin-left: 20px;
+  max-width: 70%;
 }
 
 .message {
