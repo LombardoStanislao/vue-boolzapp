@@ -67,6 +67,33 @@
 
             <div class="contacts-list">
 
+              <ul class="friends-chat">
+
+                <li v-for="(user, index) in contacts" >
+
+                  <div class="friend">
+                    <div class="friend-choose">
+
+                      <a href="#">
+                        <img :src="user.avatar" alt="">
+                      </a>
+
+                    </div>
+                    <div class="friend-info">
+                      
+                      <a href="#">
+                          <span>{{user.name}}</span>
+                      </a>
+
+
+                    </div>
+                  </div>
+
+
+                </li>
+
+              </ul>
+
             </div>
 
         </div>
