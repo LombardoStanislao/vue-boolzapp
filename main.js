@@ -54,7 +54,7 @@ var app = new Vue({
               ],
        },
     {
-         name: 'Samuele',
+         name: 'Luisa',
          avatar: 'img/avatar_3.png',
          visible: true,
          messages: [
@@ -76,7 +76,7 @@ var app = new Vue({
          ],
     },
     {
-         name: 'Luisa',
+         name: 'Samuele',
          avatar: 'img/avatar_4.png',
          visible: true,
          messages: [

@@ -11,6 +11,7 @@ ul {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 .float {
@@ -157,4 +158,16 @@ a {
   display: flex;
   align-items: center;
   padding-top: 10px;
+}
+
+.friend-info {
+  padding-left: 10px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.friend-info small {
+  color: rgba(0, 0, 0, 0.4);
 }
