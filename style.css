@@ -4,3 +4,86 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
+
+.float {
+  float: left;
+}
+
+
+.background-top {
+  background-color: #12916b;
+  height: 15vh;
+}
+
+.background-bottom {
+  background-color: #dbd4c5;
+  height: 85vh;
+}
+
+#root {
+  position: absolute;
+  width: 1200px;
+  height: 650px;
+  background-color: white;
+  right: 50%;
+  top: 50%;
+  transform: translate(+50%, -50%);
+
+}
+
+#root::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+.contacts {
+  width: 450px;
+  height: 100%;
+  background-color: coral;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatbox {
+  width: 750px;
+  height: 100%;
+  background-color: lightblue;
+}
+
+.user-info {
+  width: 100%;
+  height: 65px;
+  background-color: #eae8e3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notification {
+  width: 100%;
+  height: 75px;
+  background-color: green;
+}
+
+.search-users {
+  height: 50px;
+  background-color: blue;
+}
+
+.contacts-list {
+  height: calc(650px - 50px - 75px - 65px);
+  background-color: purple;
+}
+
+#user-icon {
+  width: 50px;
+  height: 50px;
+  margin-left: 5px;
+}
+
+.user-settings a i {
+  color: #b5b3af;
+  font-size: 20px;
+  padding-right: 10px;
+}
