@@ -21,7 +21,7 @@
               <div class="user-avatar">
 
                 <a href="#">
-                    <img id="user-icon" src="img/avatar-io.png" alt="">
+                    <img class="avatar-image" id="user-icon" src="img/avatar-io.png" alt="">
 
                 </a>
 
@@ -48,10 +48,23 @@
                 <a href="#">
                   <i class="fas fa-bell-slash"></i>
                 </a>
-                <p>Ricevi notifiche di nuovi messaggi</p>
-
-                <small>Attiva notifiche desktop</small>
               </div>
+
+              <div class="text-notification">
+
+                <a href="#">
+                  <p>Ricevi notifiche di nuovi messaggi</p>
+                </a>
+                <a href="#">
+                  <small>Attiva notifiche desktop</small>
+                </a>
+
+
+
+
+              </div>
+
+
 
 
             </div>
@@ -69,13 +82,13 @@
 
               <ul class="friends-chat">
 
-                <li v-for="(user, index) in contacts" >
+                <li @click="chooseFriend(index)" v-for="(user, index) in contacts" >
 
                   <div class="friend">
                     <div class="friend-avatar">
 
                       <a href="#">
-                        <img :src="user.avatar" alt="">
+                        <img class="avatar-image" :src="user.avatar" alt="">
                       </a>
 
                     </div>
@@ -102,7 +115,6 @@
                     </div>
                   </div>
 
-
                 </li>
 
               </ul>
@@ -113,13 +125,36 @@
 
         <div class="chatbox float">
 
-            <div class="contacted-user">
+            <div class="contacted-user" >
+
+              <div class="friend-contacted-avatar">
+
+                <img class="avatar-image" :src="contacts[indexContacts].avatar" alt="">
+
+              </div>
+
+              <div class="friend-contacted-info">
+
+                <p>{{contacts[indexContacts].name}}</p>
+
+                <small class="opacity-down">Ultimo accesso oggi alle 15:40</small>
+
+              </div>
+
+
+
+
+
+
 
             </div>
 
-            <div class="chat">
-              
-            </div>
+            <!-- <div class="chat">
+
+              <p v-for="(message, index) in contacts[indexContacts].messages">
+                {{message.message}}
+              </p>
+            </div> -->
 
         </div>
 

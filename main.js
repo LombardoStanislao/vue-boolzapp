@@ -8,6 +8,7 @@ var app = new Vue({
 
   data: {
 
+    indexContacts: 0,
     contacts: [
        {
               name: 'Michele',
@@ -99,6 +100,12 @@ var app = new Vue({
   }, // Fine data
 
   methods: {
+
+    chooseFriend(indexArray) {
+
+        this.indexContacts = indexArray;
+
+    }
 
 
 

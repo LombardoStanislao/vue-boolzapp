@@ -20,6 +20,15 @@ a {
   float: left;
 }
 
+p, small {
+  color: #3d3737;
+}
+
+.opacity-down {
+    opacity: .6;
+}
+
+
 /***********  Preparazione Layout ********** */
 
 .background-top {
@@ -118,19 +127,16 @@ a {
   font-size: 20px;
 }
 
+.text-notification small {
+  text-decoration: underline;
+}
+
 .bell {
   margin-left: 20px;
+  margin-right: 10px;
 }
 
-.bell p {
-  font-size: 14px;
-  padding-left: 5px;
-  display: inline-block;
-}
 
-.bell small {
-  display: block;
-}
 
 .search-users a i {
   color: #b5b3af;
@@ -149,7 +155,7 @@ a {
   width: 75%;
 }
 
-.contacts-list ul li a img {
+.avatar-image {
   width: 50px;
   height: 50px;
 }
@@ -182,11 +188,17 @@ a {
 /***********  Inizio lista chatbox ***********/
 
 .contacted-user {
-  
+
   height: 65px;
   background-color: #eae8e3;
+  display: flex;
+  align-items: center;
 }
 
+.friend-contacted-avatar {
+  margin-left: 10px;
+}
 
-.chat {
+.friend-contacted-info {
+  padding-left: 10px;
 }
