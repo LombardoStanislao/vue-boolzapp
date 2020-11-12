@@ -156,8 +156,8 @@ p, small {
 }
 
 .avatar-image {
-  width: 50px;
-  height: 50px;
+  width: 65px;
+  height: 65px;
 }
 
 .friends-chat {
@@ -170,6 +170,7 @@ p, small {
   display: flex;
   align-items: center;
   padding-top: 15px;
+
 }
 
 .friend-info {
@@ -178,6 +179,7 @@ p, small {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
 
 .friend-info small {
@@ -209,6 +211,11 @@ p, small {
   padding-left: 10px;
 }
 
+.contacted-avatar {
+  width: 50px;
+  height: 50px;
+}
+
 .chat {
   height: calc(100% - 65px - 65px);
   background-image: url('img/background-whatsapp.png');
@@ -238,6 +245,7 @@ p, small {
   border: none;
   padding: 10px 5px;
   border-radius: 5px;
+  outline: none;
 }
 
 #icon-vocal-text {
@@ -246,4 +254,37 @@ p, small {
   margin-right: 20px;
   margin-left: 20px;
 
+}
+
+
+/************ INIZIO ZONA CHAT  **************/
+
+.sent, .received {
+  padding: 20px;
+  margin-top: 15px;
+  border-radius: 10px;
+  clear: both;
+}
+
+.sent {
+  background-color: #bcf7b2;
+  float: right;
+  margin-right: 20px;
+}
+
+.received {
+  background-color: white;
+  float: left;
+  margin-left: 20px;
+}
+
+.message {
+  position: relative;
+}
+
+.message-hour {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  font-size: 10px;
 }

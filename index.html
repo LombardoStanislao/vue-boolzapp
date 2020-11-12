@@ -131,7 +131,7 @@
 
                 <div class="friend-contacted-avatar">
 
-                  <img class="avatar-image" :src="contacts[indexContacts].avatar" alt="">
+                  <img class="contacted-avatar" :src="contacts[indexContacts].avatar" alt="">
 
                 </div>
 
@@ -174,9 +174,21 @@
 
             <div class="chat">
 
-              <p v-for="(message, index) in contacts[indexContacts].messages">
-                {{message.message}}
-              </p>
+              <div v-for="(message, index) in contacts[indexContacts].messages">
+
+                <div :class="message.status" class="message">
+
+                  <p>
+                    {{message.message}}
+                  </p>
+
+                  <small class="message-hour" >
+                    {{message.date}}
+                  </small>
+
+                </div>
+
+              </div>
 
             </div>
 
@@ -189,7 +201,8 @@
               </div>
 
               <div class="write-message">
-                <input id="text-input" type="text" name="" value="" placeholder="Scrivi un messaggio">
+                <!-- <input id="text-input" type="text" name="" placeholder="Scrivi un messaggio"> -->
+                <input v-on:keyup.enter="sendingMessage(newMessage)" id="text-input" type="text" name="" v-model="newMessage" placeholder="Scrivi un messaggio">
               </div>
 
               <div class="vocal-message">
