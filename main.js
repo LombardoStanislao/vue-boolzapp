@@ -195,16 +195,20 @@ var app = new Vue({
 
     searchingUsers() {
 
+      this.contacts.forEach((contact, i) => {
+
+        if (this.writeName == contact.name) {
+
+          contact.visible = true;
+
+        } else {
+
+          contact.visible = false;
+        }
+
+      });
+
       // let search = writeName;
-      if (this.writeName == this.contacts[this.indexContacts].name) {
-
-        this.contacts[this.indexContacts].visible = true;
-
-      } else {
-
-        this.contacts[this.indexContacts].visible = false;
-      }
-
 
 
     }
