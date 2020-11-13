@@ -15,6 +15,7 @@ var app = new Vue({
 
     newMessage: '',
     newMessageReply: 'ok',
+    writeName: '',
     indexContacts: 0,
     contacts: [
        {
@@ -165,7 +166,7 @@ var app = new Vue({
 
     pickHour() {
 
-      this.contacts.date.substring(12, 5)
+      this.contacts[this.indexContacts].date.substring(12, 5)
     },
 
     sendingMessage(newMessage) {
@@ -189,6 +190,22 @@ var app = new Vue({
 
         }, 1500)
       }
+
+    },
+
+    searchingUsers(element) {
+
+      // let search = writeName;
+      if (this.writeName == this.contacts[this.indexContacts].name) {
+
+        this.contacts[this.indexContacts].element = true;
+
+      } else {
+
+        this.contacts[this.indexContacts].element = false;
+      }
+
+
 
     }
 
