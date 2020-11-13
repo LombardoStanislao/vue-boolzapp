@@ -74,7 +74,9 @@
               <a href="#">
                 <i class="fas fa-search"></i>
               </a>
-              <input id="search" type="search" name="" value="" placeholder="Cerca o inizia una nuova chat">
+              <input id="search" type="search" name="" value="" placeholder="Cerca o inizia una nuova chat"
+
+              >
 
             </div>
 
@@ -88,7 +90,7 @@
                     <div class="friend-avatar">
 
                       <a href="#">
-                        <img class="avatar-image" :src="user.avatar" alt="">
+                        <img class="avatar-image" :src="'img/avatar' + user.avatar + '.png'" alt="">
                       </a>
 
                     </div>
@@ -123,6 +125,8 @@
 
         </div>
 
+        <!-- INIZIO LATO DESTRO  -->
+
         <div class="chatbox float">
 
             <div class="contacted-user" >
@@ -131,7 +135,7 @@
 
                 <div class="friend-contacted-avatar">
 
-                  <img class="contacted-avatar" :src="contacts[indexContacts].avatar" alt="">
+                  <img class="contacted-avatar" :src="'img/avatar' + contacts[indexContacts].avatar + '.png'" alt="">
 
                 </div>
 
@@ -159,19 +163,10 @@
                   <i class="fas fa-ellipsis-v"></i>
                 </a>
 
-
-
               </div>
 
-
-
-
-
-
-
-
             </div>
-
+        <!-- INIZIO ZONA CHAT -->
             <div class="chat">
 
               <div v-for="(message, index) in contacts[indexContacts].messages">
@@ -201,8 +196,8 @@
               </div>
 
               <div class="write-message">
-                <!-- <input id="text-input" type="text" name="" placeholder="Scrivi un messaggio"> -->
-                <input v-on:keyup.enter="sendingMessage(newMessage, indexContacts)" id="text-input" type="text" name="" v-model="newMessage" placeholder="Scrivi un messaggio">
+
+                <input v-on:keyup.enter="sendingMessage(newMessage)" id="text-input" type="text" name="" v-model="newMessage" placeholder="Scrivi un messaggio">
               </div>
 
               <div class="vocal-message">
@@ -214,9 +209,6 @@
             </div>
 
         </div>
-
-
-
 
       </div>
 

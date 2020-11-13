@@ -28,6 +28,14 @@ p, small {
     opacity: .6;
 }
 
+.rightUser {
+  display: block;
+}
+
+.wrongUser {
+  display: none;
+}
+
 
 /***********  Preparazione Layout ********** */
 
@@ -171,7 +179,6 @@ p, small {
   display: flex;
   align-items: center;
   padding-top: 15px;
-
 }
 
 .friend-info {

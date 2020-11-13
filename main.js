@@ -1,6 +1,5 @@
-// Milestone 3
-// ● Aggiunta di un messaggio:​l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
-// ● Risposta dall’interlocutore: ​ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
+// Milestone 4
+// ● Ricerca utenti: ​scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
 
 var app = new Vue({
 
@@ -20,7 +19,7 @@ var app = new Vue({
     contacts: [
        {
               name: 'Michele',
-              avatar: 'img/avatar_1.png',
+              avatar: '_1',
               visible: true,
               messages: [
                      {
@@ -42,7 +41,7 @@ var app = new Vue({
        },
        {
               name: 'Fabio',
-              avatar: 'img/avatar_2.png',
+              avatar: '_2',
               visible: true,
               messages: [
                      {
@@ -64,7 +63,7 @@ var app = new Vue({
        },
     {
          name: 'Luisa',
-         avatar: 'img/avatar_3.png',
+         avatar: '_3',
          visible: true,
          messages: [
                 {
@@ -86,7 +85,7 @@ var app = new Vue({
     },
     {
          name: 'Samuele',
-         avatar: 'img/avatar_4.png',
+         avatar: '_4',
          visible: true,
          messages: [
                 {
@@ -103,7 +102,7 @@ var app = new Vue({
     },
     {
          name: 'Manuel',
-         avatar: 'img/avatar_5.png',
+         avatar: '_5',
          visible: true,
          messages: [
                 {
@@ -130,7 +129,7 @@ var app = new Vue({
     },
     {
          name: 'Francesca',
-         avatar: 'img/avatar_6.png',
+         avatar: '_6',
          visible: true,
          messages: [
                 {
@@ -169,9 +168,9 @@ var app = new Vue({
       this.contacts.date.substring(12, 5)
     },
 
-    sendingMessage(newMessage, indexContacts) {
+    sendingMessage(newMessage) {
 
-      this.contacts[indexContacts].messages.push({
+      this.contacts[this.indexContacts].messages.push({
         date: '15:30',
         message: newMessage,
         status: 'sent'
@@ -182,13 +181,13 @@ var app = new Vue({
 
         setTimeout(() => {
 
-          this.contacts[indexContacts].messages.push({
+          this.contacts[this.indexContacts].messages.push({
             date: '15:32',
             message: this.newMessageReply,
             status: 'received'
           });
 
-        }, 2000)
+        }, 1500)
       }
 
     }
