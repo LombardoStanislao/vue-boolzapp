@@ -1,5 +1,5 @@
-// Milestone 4
-// ● Ricerca utenti: ​scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
+// Visualizzazione ora e ultimo messaggio inviato/ricevuto​nella lista dei contatti
+
 
 var app = new Vue({
 
@@ -102,7 +102,7 @@ var app = new Vue({
          ],
     },
     {
-         name: 'Manuel',
+         name: 'Michelangelo',
          avatar: '_5',
          visible: true,
          messages: [
@@ -197,20 +197,18 @@ var app = new Vue({
 
       this.contacts.forEach((contact, i) => {
 
-        if (this.writeName == contact.name) {
+          if (contact.name.includes(this.writeName)) {
 
-          contact.visible = true;
+            contact.visible = true;
 
-        } else {
+          } else {
 
-          contact.visible = false;
-        }
+            contact.visible = false;
+          }
 
       });
 
-      // let search = writeName;
-
-
+      console.log(this.writeName);
     }
 
 
