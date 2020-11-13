@@ -193,16 +193,16 @@ var app = new Vue({
 
     },
 
-    searchingUsers(element) {
+    searchingUsers() {
 
       // let search = writeName;
       if (this.writeName == this.contacts[this.indexContacts].name) {
 
-        this.contacts[this.indexContacts].element = true;
+        this.contacts[this.indexContacts].visible = true;
 
       } else {
 
-        this.contacts[this.indexContacts].element = false;
+        this.contacts[this.indexContacts].visible = false;
       }
 
 

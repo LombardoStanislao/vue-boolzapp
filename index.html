@@ -90,10 +90,10 @@
 
               <!-- SECONDO TENTATIVO -->
 
-              <!-- <input id="search" type="search" name="" value="" placeholder="Cerca o inizia una nuova chat"
+              <input id="search" type="search" name="" value="" placeholder="Cerca o inizia una nuova chat"
               v-model="writeName"
               v-on:keyup="searchingUsers()"
-              > -->
+              >
 
             </div>
 
@@ -101,12 +101,12 @@
 
               <ul class="friends-chat">
 
-                <li @click="chooseFriend(index)" v-for="(user, index) in contacts" >
+                <!-- <li @click="chooseFriend(index)" v-for="(user, index) in contacts" > -->
 
-                <!-- <li
+                <li
                 :class"(visible = true) ? rightUser : wrongUser"
                 @click="chooseFriend(index)"
-                v-for="(user, index) in contacts" > -->
+                v-for="(user, index) in contacts" >
 
                   <div class="friend">
                     <div class="friend-avatar">
