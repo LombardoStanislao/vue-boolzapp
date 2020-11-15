@@ -150,7 +150,9 @@ var app = new Vue({
                 }
          ],
     },
-]
+],
+
+    visible: false,
 
 
 

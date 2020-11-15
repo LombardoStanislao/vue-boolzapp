@@ -28,6 +28,13 @@ p, small {
     opacity: .6;
 }
 
+.disabled {
+    display: none;
+}
+
+.active {
+    display: block;
+}
 
 
 /***********  Preparazione Layout ********** */
@@ -286,9 +293,57 @@ p, small {
   position: relative;
 }
 
+.message:hover .option-message {
+
+    transition: all 0.2s;
+    opacity: 0.6;
+    right: 10px;
+
+}
+
 .message-hour {
   position: absolute;
   bottom: 5px;
   right: 10px;
   font-size: 10px;
+}
+
+
+.option-message {
+    position: absolute;
+    top: 2px;
+    right: 0px;
+    padding: 2px;
+    opacity: 0;
+}
+
+
+.sub-menu-message  {
+    padding: 10px 15px;
+    width: 200px;
+    height: 140px;
+    background-color: white;
+    -webkit-box-shadow: 0px 5px 13px 0px rgba(50, 50, 50, 0.6);
+    -moz-box-shadow:    0px 5px 13px 0px rgba(50, 50, 50, 0.6);
+    box-shadow:         0px 5px 13px 0px rgba(50, 50, 50, 0.6);
+    border-radius: 5px;
+    position: absolute;
+}
+
+.message.sent .sub-menu-message {
+    top: 25px;
+    right: 10px;
+}
+
+.message.received .sub-menu-message {
+    top: 25px;
+    left: 90%;
+    z-index: 1;
+}
+
+.sub-menu-message a {
+    padding: 5px;
+    display: inline-block;
+    color: #3d3737;
+
 }
