@@ -89,7 +89,7 @@
 
               <ul class="friends-chat">
 
-                <li v-if="user.visible" @click="chooseFriend(index)" v-for="(user, index) in contacts" >
+                <li id="row-friend" v-if="user.visible" @click="chooseFriend(index)" v-for="(user, index) in contacts" :class="(indexContacts == index) ? friend-selected : '' ">
 
                   <div class="friend">
                     <div class="friend-avatar">
@@ -105,7 +105,7 @@
                         <a href="#">
 
                             <p>{{user.name}}</p>
-                            <small>Non poteva essere altrimenti</small>
+                            <small v-for="(message, index) in contacts[indexContacts].messages">{{message.message}}</small>
 
                         </a>
                       </div>
@@ -186,7 +186,7 @@
                     {{message.date}}
                   </small>
 
-                  <a v-on:click="visible = !visible" href="#" class="option-message">
+                  <a v-on:click="showFirstChild" href="#" class="option-message">
                       <i  class="fas fa-chevron-down"></i>
                   </a>
                   <div v-if="visible" class="sub-menu-message">

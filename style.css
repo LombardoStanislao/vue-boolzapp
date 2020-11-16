@@ -111,7 +111,6 @@ p, small {
 .contacts-list {
   height: calc(650px - 50px - 75px - 65px);
   background-color: white;
-  padding: 20px;
   overflow: scroll;
 }
 
@@ -181,13 +180,26 @@ p, small {
   padding-top: 15px;
 }
 
+#row-friend {
+    padding: 15px;
+    cursor: pointer;
+}
+
+#row-friend:hover {
+    background-color: #c4c2be;
+}
+
+.friend-selected:active {
+    background-color: #c4c2be;
+}
+
+
 .friend-info {
   padding-left: 10px;
   flex-grow: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
 }
 
 .friend-info small {

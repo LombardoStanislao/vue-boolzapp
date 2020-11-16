@@ -211,7 +211,17 @@ var app = new Vue({
       });
 
       console.log(this.writeName);
+    },
+
+    showFirstChild() {
+        // .option-message + div {
+        //
+        // }
+
+        this.visible = !this.visible;
+
     }
+
 
 
 
