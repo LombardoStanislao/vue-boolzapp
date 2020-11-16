@@ -8,16 +8,11 @@ var app = new Vue({
 
   data: {
 
-    // newMessage: {
-    //               date: '',
-    //               message:'',
-    //               status: 'sent'
-    //             },
-
     newMessage: '',
     newMessageReply: 'ok',
     writeName: '',
     indexContacts: 0,
+    indexMessage: 0,
     contacts: [
        {
               name: 'Michele',
@@ -197,7 +192,7 @@ var app = new Vue({
         date: '15:30',
         message: newMessage,
         status: 'sent',
-        showSubMenu: false,
+        showSubMenu: 'disabled',
 
       });
 
@@ -210,7 +205,7 @@ var app = new Vue({
             date: '15:32',
             message: this.newMessageReply,
             status: 'received',
-            showSubMenu: false,
+            showSubMenu: 'disabled',
           });
 
         }, 1500)
@@ -236,9 +231,12 @@ var app = new Vue({
       console.log(this.writeName);
     },
 
-    showSubMenu(indexMessage) {
+    hideSubMenu() {
 
-        this.contacts[this.indexContacts].messages.showSubMenu = 'disabled'
+
+    },
+
+    showSubMenu(indexMessage) {
 
         if (this.contacts[this.indexContacts].messages[indexMessage].showSubMenu == 'disabled') {
             this.contacts[this.indexContacts].messages[indexMessage].showSubMenu = 'active'
@@ -246,7 +244,27 @@ var app = new Vue({
             this.contacts[this.indexContacts].messages[indexMessage].showSubMenu = 'disabled'
         }
 
+    },
+
+    deleteMessage(indexMessage) {
+
+        this.contacts[this.indexContacts].messages.splice(indexMessage, 1)
+    },
+
+    scrollToBottom() {
+
+        let div = document.getElementById('prova');
+
+        setInterval((scrollToBottom) => {
+
+            div.scrollTop = div.scrollHeight - div.clientHeight;
+
+        }, 500)
     }
+
+
+
+
 
 
 

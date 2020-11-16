@@ -111,7 +111,7 @@ p, small {
 .contacts-list {
   height: calc(650px - 50px - 75px - 65px);
   background-color: white;
-  overflow: scroll;
+  overflow: auto;
 }
 
 #user-icon {
@@ -238,7 +238,7 @@ p, small {
 
 .chat {
   height: calc(100% - 65px - 65px);
-  overflow: scroll;
+  overflow: auto;
   background-image: url('img/background-whatsapp.png');
 }
 

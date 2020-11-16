@@ -114,7 +114,7 @@
 
                       <div class="chat-time">
 
-                        <small>17:55</small>
+                        <small>{{user.messages[user.messages.length -1] .date}}</small>
 
                       </div>
 
@@ -172,7 +172,7 @@
 
             </div>
         <!-- INIZIO ZONA CHAT -->
-            <div class="chat">
+            <div v-bind="scrollToBottom()" class="chat" id="prova">
 
               <div v-for="(message, index) in contacts[indexContacts].messages">
 
@@ -200,7 +200,7 @@
                       <a href="#">
                           <p>Messaggio importante</p>
                       </a>
-                      <a href="#">
+                      <a @click="deleteMessage(index)" href="#">
                           <p>Elimina messaggio</p>
                       </a>
 
