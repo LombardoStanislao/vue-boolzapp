@@ -89,7 +89,7 @@
 
               <ul class="friends-chat">
 
-                <li id="row-friend" v-if="user.visible" @click="chooseFriend(index)" v-for="(user, index) in contacts" :class="(indexContacts == index) ? friend-selected : '' ">
+                <li id="row-friend" v-if="user.visible" @click="chooseFriend(index)" v-for="(user, index) in contacts" >
 
                   <div class="friend">
                     <div class="friend-avatar">
@@ -105,7 +105,7 @@
                         <a href="#">
 
                             <p>{{user.name}}</p>
-                            <small v-for="(message, index) in contacts[indexContacts].messages">{{message.message}}</small>
+                            <small>{{user.messages[user.messages.length -1] .message}}</small>
 
                         </a>
                       </div>
