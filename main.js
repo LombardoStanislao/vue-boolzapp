@@ -1,4 +1,5 @@
-// Visualizzazione ora e ultimo messaggio inviato/ricevuto​nella lista dei contatti
+// Cancella messaggio: cliccando sul messaggio appare un menu a tendina che
+// permette di cancellare il messaggio selezionato
 
 
 var app = new Vue({
@@ -26,17 +27,21 @@ var app = new Vue({
                      {
                             date: '10/01/2020 15:30:55',
                             message: 'Hai portato a spasso il cane?',
-                            status: 'sent'
+                            status: 'sent',
+                            showSubMenu: 'disabled',
+
                      },
                      {
                             date: '10/01/2020 15:50:00',
                             message: 'Ricordati di dargli da mangiare',
-                            status: 'sent'
+                            status: 'sent',
+                            showSubMenu: 'disabled',
                      },
                      {
                             date: '10/01/2020 16:15:22',
                             message: 'Tutto fatto!',
-                            status: 'received'
+                            status: 'received',
+                            showSubMenu: 'disabled',
                      }
               ],
        },
@@ -48,17 +53,20 @@ var app = new Vue({
                      {
                             date: '20/03/2020 16:30:00',
                             message: 'Ciao come stai?',
-                            status: 'sent'
+                            status: 'sent',
+                            showSubMenu: 'disabled',
                      },
                      {
                             date: '20/03/2020 16:30:55',
                             message: 'Bene grazie! Stasera ci vediamo?',
-                            status: 'received'
+                            status: 'received',
+                            showSubMenu: 'disabled',
                      },
                      {
                             date: '20/03/2020 16:35:00',
                             message: 'Mi piacerebbe ma devo andare a fare la spesa',
-                             status: 'received'
+                            status: 'sent',
+                            showSubMenu: 'disabled',
                       }
               ],
        },
@@ -70,17 +78,20 @@ var app = new Vue({
                 {
                        date: '28/03/2020 10:10:40',
                        message: 'La Marianna va in campagna',
-                       status: 'received'
+                       status: 'received',
+                       showSubMenu: 'disabled',
                 },
                 {
                        date: '28/03/2020 10:20:10',
                        message: 'Sicuro di non aver sbagliato chat?',
-                       status: 'sent'
+                       status: 'sent',
+                       showSubMenu: 'disabled',
                 },
                 {
                        date: '28/03/2020 16:15:22',
                        message: 'Ah scusa!',
-                       status: 'received'
+                       status: 'received',
+                       showSubMenu: 'disabled',
                 }
          ],
     },
@@ -92,12 +103,14 @@ var app = new Vue({
                 {
                        date: '10/01/2020 15:30:55',
                        message: 'Lo sai che ha aperto una nuova pizzeria?',
-                       status: 'sent'
+                       status: 'sent',
+                       showSubMenu: 'disabled',
                 },
                 {
                        date: '10/01/2020 15:50:00',
                        message: 'Si, ma preferirei andare al cinema',
-                       status: 'received'
+                       status: 'received',
+                       showSubMenu: 'disabled',
                 }
          ],
     },
@@ -109,22 +122,26 @@ var app = new Vue({
                 {
                        date: '10/01/2020 15:30:55',
                        message: 'Ti va di andar in palestra oggi?',
-                       status: 'sent'
+                       status: 'sent',
+                       showSubMenu: 'disabled',
                 },
                 {
                        date: '10/01/2020 15:50:00',
                        message: 'Si, ma devo far solo cardio, niente pesi',
-                       status: 'received'
+                       status: 'received',
+                       showSubMenu: 'disabled',
                 },
                 {
                        date: '10/01/2020 15:50:00',
                        message: 'Certo tranquillo non vorrei mai diventassi uomo',
-                       status: 'sent'
+                       status: 'sent',
+                       showSubMenu: 'disabled',
                 },
                 {
                        date: '10/01/2020 15:50:00',
                        message: 'Ha ha ha',
-                       status: 'received'
+                       status: 'received',
+                       showSubMenu: 'disabled',
                 }
          ],
     },
@@ -136,23 +153,26 @@ var app = new Vue({
                 {
                        date: '10/01/2020 15:30:55',
                        message: 'Ciao! Sai ti ho pensata molto oggi...',
-                       status: 'sent'
+                       status: 'sent',
+                       showSubMenu: 'disabled',
                 },
                 {
                        date: '10/01/2020 15:50:00',
                        message: 'Si, anche io un sacco! Ne parlavo anche con Claudia che non avrei mai immaginato di trovar un vero amico che crede all\'amicizia uomo-donna e non vuole andar a letto insieme',
-                       status: 'received'
+                       status: 'received',
+                       showSubMenu: 'disabled',
                 },
                 {
                        date: '10/01/2020 15:50:00',
                        message: 'Ho capito... ennesima friendzone',
-                       status: 'sent'
+                       status: 'sent',
+                       showSubMenu: 'disabled',
                 }
          ],
     },
 ],
 
-    visible: false,
+
 
 
 
@@ -176,7 +196,9 @@ var app = new Vue({
       this.contacts[this.indexContacts].messages.push({
         date: '15:30',
         message: newMessage,
-        status: 'sent'
+        status: 'sent',
+        showSubMenu: false,
+
       });
 
       if (newMessage != '') {
@@ -187,7 +209,8 @@ var app = new Vue({
           this.contacts[this.indexContacts].messages.push({
             date: '15:32',
             message: this.newMessageReply,
-            status: 'received'
+            status: 'received',
+            showSubMenu: false,
           });
 
         }, 1500)
@@ -213,12 +236,15 @@ var app = new Vue({
       console.log(this.writeName);
     },
 
-    showFirstChild() {
-        // .option-message + div {
-        //
-        // }
+    showSubMenu(indexMessage) {
 
-        this.visible = !this.visible;
+        this.contacts[this.indexContacts].messages.showSubMenu = 'disabled'
+
+        if (this.contacts[this.indexContacts].messages[indexMessage].showSubMenu == 'disabled') {
+            this.contacts[this.indexContacts].messages[indexMessage].showSubMenu = 'active'
+        } else {
+            this.contacts[this.indexContacts].messages[indexMessage].showSubMenu = 'disabled'
+        }
 
     }
 

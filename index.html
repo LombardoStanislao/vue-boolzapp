@@ -186,10 +186,10 @@
                     {{message.date}}
                   </small>
 
-                  <a v-on:click="showFirstChild" href="#" class="option-message">
+                  <a v-on:click="showSubMenu(index)" href="#" class="option-message">
                       <i  class="fas fa-chevron-down"></i>
                   </a>
-                  <div v-if="visible" class="sub-menu-message">
+                  <div :class="message.showSubMenu" class="sub-menu-message ">
 
                       <a id="first-option" href="#">
                           <p>Info messaggio</p>
