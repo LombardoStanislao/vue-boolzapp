@@ -178,6 +178,7 @@ var app = new Vue({
     chooseFriend(indexArray) {
 
         this.indexContacts = indexArray;
+        this.scrollToBottom();
 
     },
 
@@ -196,6 +197,8 @@ var app = new Vue({
 
       });
 
+      this.scrollToBottom();
+
       if (newMessage != '') {
         this.newMessage = '';
 
@@ -208,7 +211,10 @@ var app = new Vue({
             showSubMenu: 'disabled',
           });
 
+          this.scrollToBottom();
         }, 1500)
+
+        ;
       }
 
     },
@@ -253,14 +259,18 @@ var app = new Vue({
 
     scrollToBottom() {
 
-        let div = document.getElementById('prova');
+      Vue.nextTick(function() {
 
-        setInterval((scrollToBottom) => {
+            let div = document.getElementById('prova');
 
-            div.scrollTop = div.scrollHeight - div.clientHeight;
+            div.scrollTop = div.scrollHeight;
 
-        }, 500)
-    }
+
+      })
+
+    },
+
+
 
 
 
