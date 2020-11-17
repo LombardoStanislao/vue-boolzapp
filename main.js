@@ -190,7 +190,7 @@ var app = new Vue({
     sendingMessage(newMessage) {
 
       this.contacts[this.indexContacts].messages.push({
-        date: '15:30',
+        date: dayjs().format('HH:mm'),
         message: newMessage,
         status: 'sent',
         showSubMenu: 'disabled',
@@ -205,7 +205,7 @@ var app = new Vue({
         setTimeout(() => {
 
           this.contacts[this.indexContacts].messages.push({
-            date: '15:32',
+            date: dayjs().format('HH:mm'),
             message: this.newMessageReply,
             status: 'received',
             showSubMenu: 'disabled',
