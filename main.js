@@ -255,6 +255,8 @@ var app = new Vue({
     deleteMessage(indexMessage) {
 
         this.contacts[this.indexContacts].messages.splice(indexMessage, 1)
+
+        console.log(this.contacts[this.indexContacts].messages);
     },
 
     scrollToBottom() {
