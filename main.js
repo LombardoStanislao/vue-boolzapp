@@ -189,41 +189,44 @@ var app = new Vue({
 
     sendingMessage(newMessage) {
 
-      this.contacts[this.indexContacts].messages.push({
-        date: dayjs().format('HH:mm'),
-        message: newMessage,
-        status: 'sent',
-        showSubMenu: 'disabled',
+        if (this.newMessage != '' && this.newMessage.trim().length>0) {
+            this.contacts[this.indexContacts].messages.push({
+              date: dayjs().format('HH:mm'),
+              message: newMessage,
+              status: 'sent',
+              showSubMenu: 'disabled',
 
-      });
+            });
 
-      this.scrollToBottom();
+            this.scrollToBottom();
 
-      if (newMessage != '') {
-        this.newMessage = '';
+            if (newMessage != '') {
+              this.newMessage = '';
 
-        setTimeout(() => {
+              setTimeout(() => {
 
-          this.contacts[this.indexContacts].messages.push({
-            date: dayjs().format('HH:mm'),
-            message: this.newMessageReply,
-            status: 'received',
-            showSubMenu: 'disabled',
-          });
+                this.contacts[this.indexContacts].messages.push({
+                  date: dayjs().format('HH:mm'),
+                  message: this.newMessageReply,
+                  status: 'received',
+                  showSubMenu: 'disabled',
+                });
 
-          this.scrollToBottom();
-        }, 1500)
+                this.scrollToBottom();
+              }, 1500)
 
-        ;
-      }
+              ;
+            }
+        }
 
     },
 
     searchingUsers() {
 
+
       this.contacts.forEach((contact, i) => {
 
-          if (contact.name.includes(this.writeName)) {
+          if (contact.name.toLowerCase().includes(this.writeName.toLowerCase())) {
 
             contact.visible = true;
 
