@@ -1,6 +1,7 @@
 // Cancella messaggio: cliccando sul messaggio appare un menu a tendina che
 // permette di cancellare il messaggio selezionato
 
+dayjs.extend(window.dayjs_plugin_customParseFormat);
 
 var app = new Vue({
 
@@ -13,6 +14,7 @@ var app = new Vue({
     writeName: '',
     indexContacts: 0,
     indexMessage: 0,
+    // formatDate: rightDate(indexMessage),
     contacts: [
        {
               name: 'Michele',
@@ -189,9 +191,9 @@ var app = new Vue({
 
     sendingMessage(newMessage) {
 
-        if (this.newMessage != '' && this.newMessage.trim().length>0) {
+        if (this.newMessage.trim().length>0) {
             this.contacts[this.indexContacts].messages.push({
-              date: dayjs().format('HH:mm'),
+              date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
               message: newMessage,
               status: 'sent',
               showSubMenu: 'disabled',
@@ -206,7 +208,7 @@ var app = new Vue({
               setTimeout(() => {
 
                 this.contacts[this.indexContacts].messages.push({
-                  date: dayjs().format('HH:mm'),
+                  date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                   message: this.newMessageReply,
                   status: 'received',
                   showSubMenu: 'disabled',
@@ -236,8 +238,6 @@ var app = new Vue({
           }
 
       });
-
-      console.log(this.writeName);
     },
 
     hideSubMenu() {
@@ -275,13 +275,11 @@ var app = new Vue({
 
     },
 
+    rightDate(dateString) {
 
+        return dayjs(dateString, "DD/MM/YYYY HH:mm:ss").format("HH:mm");
 
-
-
-
-
-
+    }
 
 
   }, // Fine methods

@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.20/dayjs.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.20/plugin/customParseFormat.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="https://kit.fontawesome.com/7b09a46f67.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
@@ -106,7 +107,7 @@
                         <a href="#">
 
                             <p>{{user.name}}</p>
-                            <small v-if="user.messages.length >= 1">{{user.messages[user.messages.length -1] .message}}</small>
+                            <small v-if="user.messages.length >= 1">{{user.messages[user.messages.length -1].message}}</small>
 
                         </a>
                       </div>
@@ -115,7 +116,7 @@
 
                       <div class="chat-time">
 
-                        <small v-if="user.messages.length >= 1">{{user.messages[user.messages.length -1] .date}}</small>
+                        <small v-if="user.messages.length >= 1">{{rightDate(user.messages[user.messages.length -1].date)}}</small>
 
                       </div>
 
@@ -184,7 +185,7 @@
                   </p>
 
                   <small class="message-hour" >
-                    {{message.date}}
+                    {{rightDate(message.date)}}
                   </small>
 
                   <a v-on:click="showSubMenu(index)" href="#" class="option-message">
